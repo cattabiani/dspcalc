@@ -1,4 +1,4 @@
-### Dyson Sphere Program Calculator
+### Dyson Sphere Program (game) Calculator
 
 With this very simple program you can easily compute how many (basic) facilities and resources you need for creating an item. In other words it gives the perfect ratios.
 

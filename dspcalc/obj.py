@@ -23,6 +23,10 @@ class DspLibrary(dict):
     def __init__(self):
         self.add(DspObj("iron ore", 1, 1, 1))
         self.add(DspObj("copper ore", 1, 1, 1))
+        self.add(DspObj("coal", 1, 2, 1))
+        self.add(DspObj("stone", 1, 2, 1))
+        self.add(DspObj("crude oil", 1, 2, 1))
+        self.add(DspObj("glass", 1, 2, 1, {"stone": 2}))
         self.add(DspObj("iron ingot", 1, 1, 1, {"iron ore": 1}))
         self.add(DspObj("copper ingot", 1, 1, 1, {"copper ore": 1}))
         self.add(DspObj("circuit board", 2, 1, 1, {"iron ingot": 2, "copper ingot": 1 }))
@@ -30,6 +34,22 @@ class DspLibrary(dict):
         self.add(DspObj("magnetic coil", 2, 1, 0.75, {"magnet": 2, "copper ingot": 1}))
         self.add(DspObj("magnet", 1, 1.5, 1, {"iron ore": 1}))
         self.add(DspObj("electric motor", 1, 2, 0.75, {"iron ingot": 2, "gear":1, "magnetic coil": 1}))
+        self.add(DspObj("sorter mk1", 1, 1, 0.75, {"iron ingot": 1, "circuit board": 1}))
+        self.add(DspObj("sorter mk2", 2, 1, 0.75, {"sorter mk1": 2, "electric motor": 1}))
+        self.add(DspObj("sorter mk3", 2, 1, 0.75, {"sorter mk2": 2, "electromagnetic turbine": 1}))
+        self.add(DspObj("electromagnetic turbine", 1, 2, 0.75, {"electric motor": 2, "magnetic coil": 2}))
+        self.add(DspObj("super-magnetic ring", 1, 3, 0.75, {"electromagnetic turbine": 2, "magnet": 3, "energetic graphite": 1}))
+        self.add(DspObj("energetic graphite", 1, 2, 1,{"coal": 2}))
+        self.add(DspObj("deuterion fuel rod", 2, 12, 0.75, {"titanium alloy": 1, "deuterium": 20, "super-magnetic ring": 1}))
+        self.add(DspObj("conveyor belt mk1", 3, 1, 0.75, {"iron ingot": 2, "gear": 1}))
+        self.add(DspObj("conveyor belt mk2", 3, 1, 0.75, {"conveyor belt mk1": 3, "electromagnetic turbine": 1}))
+        self.add(DspObj("conveyor belt mk3", 3, 1, 0.75, {"conveyor belt mk2": 3, "super-magnetic ring": 1, "graphene":1}))
+        self.add(DspObj("graphene", 2, 3, 1, {"graphene": 3, "sulfuric acid": 1}))
+        self.add(DspObj("sulfuric acid", 4, 6, 1, {"refined oil": 6, "stone": 8, "water": 4}))
+        self.add(DspObj("refined oil", 2, 4, 1, {"crude oil": 2}))
+        self.add(DspObj("plasma exciter", 1, 2, 0.75, {"prism": 2, "magnetic coil": 4}))
+        self.add(DspObj("prism", 2, 2, 0.75, {"glass": 3}))
+
 
 
     def add(self, obj):
